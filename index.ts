@@ -41,7 +41,6 @@ function init(input: string, brackets: Bracket[]): boolean {
         
         if(isOpeningBracket) {
             openedBrackets.push(isOpeningBracket.opening);
-            console.log("opening " + isOpeningBracket.opening);
             continue;
         }
 
@@ -50,7 +49,6 @@ function init(input: string, brackets: Bracket[]): boolean {
         let isClosingBracket = brackets.find(x => x.closing == input[i]);
 
         if(isClosingBracket && isClosingBracket.opening == openedBrackets[openedBrackets.length - 1]) {
-            console.log("closing " + isClosingBracket.closing);
             openedBrackets.pop();
         } else {
             throw new Error('format error');
